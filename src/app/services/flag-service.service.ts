@@ -6,14 +6,19 @@ import { Observable, map } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class FlagServiceService {
+export class FlagService {
 
-  private url: string = 'https://restcountries.com/v3.1/all';
+  private url: string = 'https://restcountries.com/v3.1/';
 
   constructor(private http: HttpClient) { }
 
   public findFlags(): Observable<DataCountry[]> {
-    return this.http.get<DataCountry[]>("https://restcountries.com/v3.1/all");
+    return this.http.get<DataCountry[]>(this.url+"all");
+  }
+
+
+  public findFlagByName(flagName: string): Observable<DataCountry[]> {
+    return this.http.get<DataCountry[]>(`${this.url}/name/${flagName}`);
   }
 
 }

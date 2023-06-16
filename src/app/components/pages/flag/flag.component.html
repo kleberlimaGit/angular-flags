@@ -1,0 +1,54 @@
+<div
+  class="d-flex container align-items-center justify-content-center flex-column"
+>
+<h1 class="mb-5">Angular Flags</h1>
+  <main class="bg-dark flag-content">
+    <section class="d-flex align-items-center justify-content-left mx-auto ps-4 mt-2">
+      <h2 class="me-2 mt-3">{{flag.name?.common}} -</h2>
+      <img [src]="flag.flags?.svg" [alt]="flag.flags?.alt" class="flag-img">
+    </section>
+    <section class="container mt-3">
+      <h3 class="text-center">Country Information</h3>
+      <ul>
+        <li class="d-flex align-items-center justify-content-between mb-2">
+          <span>Name:</span>
+          <strong>{{flag.name?.official}}</strong>
+        </li>
+        <li class="d-flex align-items-center justify-content-between mb-2">
+            <span>Capital:</span>
+            <strong>{{flag.capital}}</strong>
+          </li>
+          <li class="d-flex align-items-center justify-content-between mb-2">
+            <span>Region:</span>
+            <strong>{{flag.region}}</strong>
+          </li>
+          <li class="d-flex align-items-center justify-content-between mb-2">
+            <span>Population:</span>
+            <strong>{{flag.population}}</strong>
+          </li>
+          <li class="d-flex align-items-center justify-content-between mb-2">
+            <span>Population:</span>
+            <strong>{{flag.population}}</strong>
+          </li>
+
+          <li class="d-flex justify-content-between">
+            <span>Currency:</span>
+            <ul>
+                <li *ngFor="let currency of flag.currencies | keyvalue">
+                    <strong>{{currency.value.symbol}} ({{ currency.value.name }}) </strong>
+                </li>
+              </ul>
+          </li>
+
+          <li class="d-flex justify-content-between">
+            <span>Languages:</span>
+            <ul>
+                <li *ngFor="let languages of flag.languages | keyvalue">
+                    <strong>{{languages.value}} - ({{ languages.value }})</strong> 
+                </li>
+              </ul>
+          </li>
+      </ul>
+    </section>
+  </main>
+</div>

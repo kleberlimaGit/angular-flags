@@ -1,0 +1,19 @@
+.flag-content{
+    height: 25rem;
+    width: 30rem;
+    min-height: 20rem;
+    border-radius: 0.8rem;
+}
+
+@media (max-width: 493px)
+{
+    .flag-content
+   {
+    width: 100%;
+   }
+}
+
+.flag-img{
+    width: 60px;
+    height: 40px;
+}

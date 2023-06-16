@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataCountry } from 'src/app/model/data-country';
 import { FlagServiceService } from 'src/app/services/flag-service.service';
 
 @Component({
@@ -7,13 +8,15 @@ import { FlagServiceService } from 'src/app/services/flag-service.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit{
-  public flags:any = []
+  public flags:DataCountry[] = []
   
   constructor(private flagService: FlagServiceService){
   }
   ngOnInit(): void {
-    this.flags = this.flagService.findFlags();
-    console.log(this.flags)
+    this.flagService.findFlags().subscribe((data: DataCountry[]) => {
+      this.flags =  data;
+      console.log(this.flags)
+    });    
   }
 
 }

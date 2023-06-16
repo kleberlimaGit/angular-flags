@@ -3,7 +3,7 @@
 >
   <h1 class="mb-5">Angular Flags</h1>
 
-  <div class="overflow-auto w-100 h-100 mx-auto">
+  <div class="table-container mb-4 w-100">
     <table class="table mt-5 table-dark table-hover">
       <thead>
         <tr>
@@ -19,7 +19,7 @@
           <td>
             <ul>
               <li *ngFor="let currency of item.currencies | keyvalue">
-                {{ currency.value.name }}
+                {{ currency.value.name }} - {{currency.value.symbol}}
               </li>
             </ul>
           </td>
@@ -29,28 +29,4 @@
       </tbody>
     </table>
   </div>
-
-  <nav aria-label="Page navigation example">
-    <ul class="pagination">
-      <li class="page-item">
-        <a class="page-link bg-dark text-white" href="#" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
-        </a>
-      </li>
-      <li class="page-item">
-        <a class="page-link bg-dark text-white" href="#">1</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link bg-dark text-white" href="#">2</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link bg-dark text-white" href="#">3</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link bg-dark text-white" href="#" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
 </main>

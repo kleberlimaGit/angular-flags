@@ -2,3 +2,10 @@
     width: 1.3rem;
     height: 1.6rem;
 }
+
+.table-container{
+    height: 30rem;
+    max-height: 60rem;
+    overflow-y: scroll;
+    margin: 0 auto;
+}

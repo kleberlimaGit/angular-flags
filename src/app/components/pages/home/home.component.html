@@ -24,7 +24,7 @@
             </ul>
           </td>
           <td class="text-center"><img [src]="item.flags.svg" [alt]="item.flags.alt" class="flags"></td>
-          <td>Mais Informações</td>
+          <td><a [routerLink]="['/flag',item.name.common]">Mais Informações</a></td>
         </tr>
       </tbody>
     </table>

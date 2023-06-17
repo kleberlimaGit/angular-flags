@@ -3,8 +3,8 @@
 >
 <h1 class="mb-5">Angular Flags</h1>
   <main class="bg-dark flag-content">
-    <section class="d-flex align-items-center justify-content-left mx-auto ps-4 mt-2">
-      <h2 class="me-2 mt-3">{{flag.name?.common}} -</h2>
+    <section class="d-flex align-items-center justify-content-between mx-auto mt-2 container">
+      <h2 class="me-2 mt-3">{{flag.name?.common}}</h2>
       <img [src]="flag.flags?.svg" [alt]="flag.flags?.alt" class="flag-img">
     </section>
     <section class="container mt-3">
@@ -26,12 +26,7 @@
             <span>Population:</span>
             <strong>{{flag.population}}</strong>
           </li>
-          <li class="d-flex align-items-center justify-content-between mb-2">
-            <span>Population:</span>
-            <strong>{{flag.population}}</strong>
-          </li>
-
-          <li class="d-flex justify-content-between">
+          <li class="d-flex justify-content-between mb-2">
             <span>Currency:</span>
             <ul>
                 <li *ngFor="let currency of flag.currencies | keyvalue">
@@ -40,11 +35,11 @@
               </ul>
           </li>
 
-          <li class="d-flex justify-content-between">
+          <li class="d-flex justify-content-between mb-2">
             <span>Languages:</span>
             <ul>
                 <li *ngFor="let languages of flag.languages | keyvalue">
-                    <strong>{{languages.value}} - ({{ languages.value }})</strong> 
+                    <strong>{{languages.key}} - ({{ languages.value }})</strong> 
                 </li>
               </ul>
           </li>

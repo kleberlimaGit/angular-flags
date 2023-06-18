@@ -9,6 +9,7 @@ import { FlagService } from 'src/app/services/flag-service.service';
   styleUrls: ['./flag.component.scss']
 })
 export class FlagComponent implements OnInit{
+  formatNumber = new Intl.NumberFormat('pt-BR')
 
   public flag: Partial<DataCountry> = {};
   constructor(private service: FlagService,  private activevedRouter: ActivatedRoute, private router: Router){}
@@ -19,7 +20,7 @@ export class FlagComponent implements OnInit{
   public findByFlagName(){
     const name = this.activevedRouter.snapshot.params['flagName']
     this.service.findFlagByName(name).subscribe({
-      next: (res:DataCountry[]) => {this.flag =  res[0]; console.log(res)},
+      next: (res:DataCountry[]) => {this.flag =  res[0]},
       error: (res: Error) => this.router.navigate(['404'])
     })
 }

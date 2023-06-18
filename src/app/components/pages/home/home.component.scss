@@ -5,7 +5,8 @@
 
 .table-container {
   height: 30rem;
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: auto;
   margin: 0 auto;
 }
 

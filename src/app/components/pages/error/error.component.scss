@@ -1,0 +1,12 @@
+.error-img{
+    width: 34rem;
+    height: 30rem;
+}
+
+@media (max-width: 493px)
+{
+    .error-img
+   {
+    width: 100%;
+   }
+}
